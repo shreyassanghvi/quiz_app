@@ -1,4 +1,4 @@
-import 'package:quiz_app/quiz_init.dart';
+import 'package:quizz_app/quiz_init.dart';
 import 'package:flutter/material.dart';
 
 const Alignment startAlignment = Alignment.topLeft;

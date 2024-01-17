@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/gradient_container.dart';
-import 'package:quiz_app/quiz_init.dart';
+import 'package:quizz_app/gradient_container.dart';
+import 'package:quizz_app/quiz_init.dart';
 
 void main() {
   const List<Color> colors = [
