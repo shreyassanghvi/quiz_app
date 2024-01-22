@@ -34,7 +34,6 @@ class _QuizState extends State<Quiz> {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        selectedAnswers = [];
         currentScreen = 'Result-Screen';
       });
     }
@@ -59,7 +58,7 @@ class _QuizState extends State<Quiz> {
       );
     } else {
       renderedWidget = ResultsScreen(
-          // chosenAnswers: selectedAnswers,
+          selectedAnswers: selectedAnswers,
           onRestart: restartQuiz
           );
     }
