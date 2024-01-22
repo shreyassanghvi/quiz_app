@@ -12,7 +12,7 @@ class ResultsScreen extends StatelessWidget {
   final List<String> selectedAnswers;
   final void Function()? onRestart;
 
-  List<Map<String, Object>> getResult() {
+  List<Map<String, Object>> get getResult {
     final results = <Map<String, Object>>[];
     for (var i = 0; i < selectedAnswers.length; i++) {
       results.add({
@@ -27,11 +27,12 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final getResultData = getResult();
+    final getResultData = getResult;
     final totalQuestions = selectedAnswers.length;
-    final correctQuestions = getResultData.where((element) {
-      return element['correct_answer'] == element['selected_answer'];
-    }).length;
+    final correctQuestions = getResultData
+        .where((element) =>
+            element['correct_answer'] == element['selected_answer'])
+        .length;
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -50,18 +51,17 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            QuestionsSummary(getResult()),
+            QuestionsSummary(getResult),
             const SizedBox(
               height: 30,
             ),
             TextButton.icon(
-              onPressed: onRestart,
-              icon: const Icon(Icons.refresh_rounded),
-              label: const Text('Restart Quiz!!'),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: const Color.fromARGB(255, 211, 188, 225),
-              )
-            ),
+                onPressed: onRestart,
+                icon: const Icon(Icons.refresh_rounded),
+                label: const Text('Restart Quiz!!'),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: const Color.fromARGB(255, 211, 188, 225),
+                )),
           ],
         ),
       ),
